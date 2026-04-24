@@ -1,0 +1,14 @@
+{
+  "watch": ["server.js", "src/"],
+  "ext": "js,json",
+  "ignore": [
+    "node_modules/",
+    "print-queue/",
+    "logs/",
+    "dist/",
+    "coverage/",
+    "*.test.js"
+  ],
+  "delay": 300,
+  "signal": "SIGTERM"
+}

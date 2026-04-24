@@ -1,0 +1,35 @@
+# ── Secrets (NEVER commit — contain real MongoDB creds + JWT secret) ─
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# ── Dependencies ─────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ── Build outputs ────────────────────────────────────────────────────
+dist/
+build/
+**/dist/
+**/build/
+coverage/
+
+# ── Runtime artefacts ────────────────────────────────────────────────
+print-queue/
+**/print-queue/
+logs/
+*.log
+
+# ── OS / editor noise ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+
+# ── Scratch scripts we created while debugging ──────────────────────
+_check_*.js
+_heal_*.js
+_trace_*.js

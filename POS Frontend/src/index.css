@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    background: #0B1524;
+    color: #E2E8F0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior: none;
+  }
+  body {
+    overflow: hidden; /* tablet-style app shell */
+  }
+  button {
+    font-family: inherit;
+    outline: none;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #2D4259;
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .pos-card {
+    @apply rounded-2xl bg-panel-900/70 backdrop-blur shadow-card border border-white/5;
+  }
+  .pos-panel {
+    @apply rounded-2xl bg-panel-grad shadow-card border border-white/5;
+  }
+  .pos-pill {
+    @apply inline-flex items-center justify-center rounded-xl font-semibold;
+  }
+  .pos-chip {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+  }
+  .tap-btn {
+    @apply active:translate-y-[2px] transition-transform duration-75 select-none;
+  }
+  .nav-tab {
+    @apply flex items-center justify-between gap-3 px-4 py-3 rounded-lg text-sm font-semibold cursor-pointer transition-all tap-btn;
+  }
+  .nav-tab-active {
+    @apply bg-brand-500 text-white shadow-btn-blue/40;
+  }
+  .nav-tab-idle {
+    @apply bg-panel-800 text-slate-200 hover:bg-panel-700;
+  }
+  .input-dark {
+    @apply w-full rounded-lg bg-panel-800 border border-white/10 px-4 py-3 text-slate-100 placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/40 outline-none transition;
+  }
+  .btn {
+    @apply pos-pill tap-btn;
+  }
+  .btn-orange {
+    @apply bg-flame-pill text-white shadow-btn-orange;
+  }
+  .btn-green {
+    @apply bg-green-pill text-white shadow-btn-green;
+  }
+  .btn-red {
+    @apply bg-red-pill text-white shadow-btn-red;
+  }
+  .btn-ghost {
+    @apply bg-panel-700 text-slate-100 hover:bg-panel-600;
+  }
+}
+
+/* Subtle page-transition helper */
+.fade-in {
+  animation: fadeIn 160ms ease-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
